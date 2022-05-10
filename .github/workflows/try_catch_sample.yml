@@ -1,0 +1,24 @@
+name: try_catch_sample
+
+on: workflow_dispatch
+
+jobs: 
+  try_catch_sample:
+    runs_on: ubuntu-latest
+
+    steps: 
+      - name: Chackout
+        uses: actions/checkout@v2
+
+      - name: Throw error
+        run: |
+          echo "started"
+          exit 1
+          echo "after exit"
+
+      - name: Succeeded process
+        run: echo "succeeded"
+
+      - name: Failed process
+        if: failure()
+        run: echo "failed"
