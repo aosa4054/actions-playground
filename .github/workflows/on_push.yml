@@ -13,5 +13,7 @@ jobs:
 
       - name: Check env values
         run: |
+          echo "GITHUB_REF_NAME"
           echo $GITHUB_REF_NAME
+          echo "GITHUB_HEAD_REF"
           echo $GITHUB_HEAD_REF
