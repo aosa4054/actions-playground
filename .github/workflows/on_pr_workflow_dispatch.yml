@@ -12,9 +12,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Check env values
+        env:
+          BRANCH_NAME: ${{ (github.event_name == 'pull_request' && '$GITHUB_HEAD_REF') || $GITHUB_REF_NAME }}
         run: |
           echo "GITHUB_REF_NAME"
           echo $GITHUB_REF_NAME
           echo "GITHUB_HEAD_REF"
           echo $GITHUB_HEAD_REF
+          echo "これでどう"
+          echo $BRANCH_NAME
 
