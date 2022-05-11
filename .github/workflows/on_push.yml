@@ -7,11 +7,11 @@ jobs:
   on_push_job:
     runs-on: ubuntu-latest
 
-      steps: 
-        - name: Chackout
-          uses: actions/checkout@v2
+    steps: 
+      - name: Chackout
+        uses: actions/checkout@v2
 
-        - name: Check env values
-          run: |
-            echo $GITHUB_REF_NAME
-            echo $GITHUB_HEAD_REF
+      - name: Check env values
+        run: |
+          echo $GITHUB_REF_NAME
+          echo $GITHUB_HEAD_REF
