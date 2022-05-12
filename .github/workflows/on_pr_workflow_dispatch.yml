@@ -17,3 +17,14 @@ jobs:
           echo $GITHUB_REF_NAME
           echo "GITHUB_HEAD_REF"
           echo $GITHUB_HEAD_REF
+          echo "これでどう"
+
+          if [ ${{ github.event_name }} = 'pull_request' ]; then
+            BRANCH_NAME=$GITHUB_HEAD_REF
+          else 
+            BRANCH_NAME=$GITHUB_REF_NAME
+          fi
+
+          echo $env:GITHUB_EVENT_NAME
+          echo $BRANCH_NAME
+
