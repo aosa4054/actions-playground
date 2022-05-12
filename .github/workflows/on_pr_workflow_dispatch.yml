@@ -24,5 +24,7 @@ jobs:
           else 
             BRANCH_NAME=$GITHUB_REF_NAME
           fi
+
+          echo $env:GITHUB_EVENT_NAME
           echo $BRANCH_NAME
 
