@@ -11,9 +11,10 @@ jobs:
       - name: Chackout
         uses: actions/checkout@v2
 
-      - name: Check env values
-        run: |
-          echo "GITHUB_REF_NAME"
-          echo $GITHUB_REF_NAME
-          echo "GITHUB_HEAD_REF"
-          echo $GITHUB_HEAD_REF
+      - name: Env set
+        env:
+          SOME_STRING: hoge
+        run: echo ${{ env.SOME_STRING }}
+
+      - name: Without env
+        run: echo ${{ env.SOME_STRING }}
