@@ -14,7 +14,7 @@ jobs:
       - name: Env set
         env:
           SOME_STRING: hoge
-        run: echo ${{ env.SOME_STRING }}
+        run: echo $SOME_STRING
 
       - name: Without env
-        run: echo ${{ env.SOME_STRING }}
+        run: echo $SOME_STRING
