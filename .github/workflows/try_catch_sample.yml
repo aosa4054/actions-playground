@@ -12,10 +12,8 @@ jobs:
 
       - name: Throw error
         run: |
-          function throw {
-            echo "started"
-            exit 1
-          }
+          echo "started"
+          exit 0
 
       - name: Succeeded process
         run: echo "succeeded"
