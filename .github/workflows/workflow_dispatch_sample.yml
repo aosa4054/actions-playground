@@ -10,7 +10,7 @@ jobs:
       - name: Chackout
         uses: actions/checkout@v2
 
-      - name: Throw error
+      - name: Exit 0
         run: |
           echo "started"
           exit 0
