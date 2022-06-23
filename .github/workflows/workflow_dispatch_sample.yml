@@ -1,9 +1,9 @@
-name: try_catch_sample
+name: workflow_dispatch_sample
 
 on: workflow_dispatch
 
 jobs: 
-  try_catch_sample:
+  workflow_dispatch_sample:
     runs-on: ubuntu-latest
 
     steps: 
