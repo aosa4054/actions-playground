@@ -10,14 +10,7 @@ jobs:
       - name: Chackout
         uses: actions/checkout@v2
 
-      - name: Exit 0
+      - name: Run
         run: |
-          echo "started"
-          exit 0
-
-      - name: Succeeded process
-        run: echo "succeeded"
-
-      - name: Failed process
-        if: failure()
-        run: echo "failed"
+          echo "${{ github.event.action }}"
+          echo `"${{ github.event.action }}" = "workflow_dispatch"`
