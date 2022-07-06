@@ -15,4 +15,6 @@ jobs:
           echo "${{ github.event_name }}"
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "1"
+            exit 0
           fi
+          echo "2"
