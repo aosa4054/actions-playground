@@ -12,5 +12,7 @@ jobs:
 
       - name: Run
         run: |
-          echo "${{ github.event.action }}"
-          echo `"${{ github.event.action }}" = "workflow_dispatch"`
+          echo "${{ github.event_name }}"
+          if ["${{ github.event.action }}" = "workflow_dispatch"]; then
+            echo "1"
+          fi
