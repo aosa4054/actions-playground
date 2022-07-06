@@ -12,6 +12,5 @@ jobs:
 
       - name: Run
         run: |
-          TODAY=`date "+%Y/%m/%d"`
-          YESTERDAY=`date -d "yesterday" "+%Y/%m/%d"`
+          echo `date "+%Y/%m/%d"`
           
