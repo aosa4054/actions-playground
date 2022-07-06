@@ -12,7 +12,7 @@ jobs:
 
       - name: Run
         run: |
-          if [ "${github.event_name}" = "workflow_dispatch" ]; then
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
             echo "1"
             exit 0
           fi
