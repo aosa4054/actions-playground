@@ -12,5 +12,11 @@ jobs:
 
       - name: Run
         run: |
-          echo `date "+%Y/%m/%d"`
-          
+          TODAY=`date "+%Y/%m/%d"`
+          CD=`git log -1 --date=format:"%Y/%m/%d" --format="%ad"`
+          if [ ＄TODAY = $CD ]; then
+            echo "1"
+          else
+            echo $TODAY
+            echo $CD
+          fi
