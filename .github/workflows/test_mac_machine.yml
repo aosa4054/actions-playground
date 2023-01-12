@@ -1,0 +1,9 @@
+name: test_mac_machine
+
+on: workflow_dispatch
+  
+jobs:
+  lscpu:
+    runs-on: ubuntu-latest
+    steps:
+      - run: lscpu
