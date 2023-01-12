@@ -3,7 +3,7 @@ name: test_mac_machine
 on: workflow_dispatch
   
 jobs:
-  lscpu:
+  test_mac_machine:
     runs-on: macos-latest
     steps:
-      - run: lscpu
+      - run: system_profiler SPHardwareDataType
