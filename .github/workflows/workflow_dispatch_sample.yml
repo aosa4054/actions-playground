@@ -22,5 +22,6 @@ jobs:
           echo $(((false || false) && 1 || 2)) #1
           echo ${{ false }} #false
           echo ${{(false || false) && 1 || 2 }} #2
-          echo ${{(false || github.event.inputs.flag) && 1 || 2 }}
+          echo ${{(false || github.event.inputs.flag) && 1 || 2 }} #1
+          echo ${{ false || github.event.inputs.flag }}
           
