@@ -12,11 +12,5 @@ jobs:
 
       - name: Run
         run: |
-          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
-            echo "1"
-            exit 0
-          fi
-          echo "2"
-      - name: Run next
-        run: |
-          echo "3"
+          echo $(((false || false) && 1 || 2))
+          echo ${{ false }}
