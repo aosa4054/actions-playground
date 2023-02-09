@@ -1,15 +1,16 @@
 name: workflow_dispatch_sample
 
-on: workflow_dispatch
-  inputs:
+on: 
+  workflow_dispatch:
+    inputs:
       flag:
         description: 'flag'
         required: true
         default: 'true'
         type: choice
         options:
-          - true
-          - false
+          - 'true'
+          - 'false'
 
 jobs: 
   workflow_dispatch_sample:
