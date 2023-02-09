@@ -20,7 +20,7 @@ jobs:
       - name: Run
         run: |
           echo ${{ false && 1 || 2 }}
-          echo ${{ github.event.inputs.flag && 1 || 2 }}
+          echo ${{ github.event.inputs.flag == 'true' && 1 || 2 }}
           echo $(((false || false) && 1 || 2)) #1
           echo ${{ false }} #false
           echo ${{(false || false) && 1 || 2 }} #2
