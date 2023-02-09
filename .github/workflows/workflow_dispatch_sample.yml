@@ -7,10 +7,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps: 
-      - name: Chackout
-        uses: actions/checkout@v2
-
       - name: Run
         run: |
           echo $(((false || false) && 1 || 2))
           echo ${{ false }}
+          echo ${{(false || false) && 1 || 2 }}
