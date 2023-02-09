@@ -1,6 +1,15 @@
 name: workflow_dispatch_sample
 
 on: workflow_dispatch
+  inputs:
+      flag:
+        description: 'flag'
+        required: true
+        default: 'true'
+        type: choice
+        options:
+          - true
+          - false
 
 jobs: 
   workflow_dispatch_sample:
@@ -12,5 +21,5 @@ jobs:
           echo $(((false || false) && 1 || 2)) #1
           echo ${{ false }} #false
           echo ${{(false || false) && 1 || 2 }} #2
-          echo ${{(false || contains(github.event.pull_request.labels.*.name, 'Flag')) && 1 || 2 }}
+          echo ${{(false || github.event.inputs.flag) && 1 || 2 }}
           
