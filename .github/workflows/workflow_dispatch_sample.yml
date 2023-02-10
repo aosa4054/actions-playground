@@ -11,18 +11,15 @@ on:
 jobs: 
   workflow_dispatch_sample:
     runs-on: ubuntu-latest
+    env:
+      MY_ENV: >- 
+        ${{
+          github.event.inputs.flag == 'true'
+            && ''
+            || '-Dorg.gradle.jvmargs="-XmxXXXm -XX:MaxMetaspaceSize=XXXm -Dkotlin.daemon.jvm.options=-XmxXXXm"'
+        }}
 
     steps: 
       - name: Run
         run: |
-          echo ${{ false && 1 || 2 }}
-          echo ${{ github.event.inputs.flag == 'true' && 1 || 2 }}
-          echo ${{ github.event.inputs.flag && 1 || 2 }}
-          echo $(((false || false) && 1 || 2)) #1
-          echo ${{ false }} #false
-          echo ${{(false || false) && 1 || 2 }} #2
-          echo ${{(false || github.event.inputs.flag) && 1 || 2 }} #1
-          echo ${{　false || github.event.inputs.flag && 1 || 2 }} #1
-          echo ${{ false || github.event.inputs.flag }}
-          echo ${{ (false || github.event.inputs.flag) }}
-          
+          echo $MY_ENV
