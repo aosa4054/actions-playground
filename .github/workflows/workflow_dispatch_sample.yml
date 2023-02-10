@@ -23,7 +23,7 @@ jobs:
       - name: Set envs
         run: |
           if "${{github.event.inputs.flag == 'true'}}"; then
-            echo "MY_ENV='-Dorg.gradle.jvmargs="-XmxXXXm -XX:MaxMetaspaceSize=XXXm -Dkotlin.daemon.jvm.options=-XmxXXXm"'" >> $GITHUB_ENV
+            echo "MY_ENV='-Dorg.gradle.jvmargs=\"-XmxXXXm -XX:MaxMetaspaceSize=XXXm -Dkotlin.daemon.jvm.options=-XmxXXXm\"'" >> $GITHUB_ENV
           fi
       - name: Run
         run: |
