@@ -12,14 +12,19 @@ jobs:
   workflow_dispatch_sample:
     runs-on: ubuntu-latest
     env:
-      MY_ENV: >- 
+      MY_ENV_A: >- 
         ${{
           github.event.inputs.flag == 'true'
-            && ''
-            || '-Dorg.gradle.jvmargs="-XmxXXXm -XX:MaxMetaspaceSize=XXXm -Dkotlin.daemon.jvm.options=-XmxXXXm"'
+            && '-Dorg.gradle.jvmargs="-XmxXXXm -XX:MaxMetaspaceSize=XXXm -Dkotlin.daemon.jvm.options=-XmxXXXm"'
+            || ''
         }}
 
     steps: 
+      - name: Set envs
+        run: |
+          if "${{github.event.inputs.flag == 'true'}}"; then
+            echo "MY_ENV='-Dorg.gradle.jvmargs="-XmxXXXm -XX:MaxMetaspaceSize=XXXm -Dkotlin.daemon.jvm.options=-XmxXXXm"'" >> $GITHUB_ENV
+          fi
       - name: Run
         run: |
           echo $MY_ENV
