@@ -1,0 +1,10 @@
+name: 'composite test'
+description: 'composite test'
+
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        if "${{github.event.inputs.flag == 'true'}}"; then
+          echo "flag true"
+        fi
