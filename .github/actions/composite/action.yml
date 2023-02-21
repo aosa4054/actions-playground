@@ -8,3 +8,4 @@ runs:
         if "${{github.event.inputs.flag == 'true'}}"; then
           echo "flag true"
         fi
+      shell: bash
