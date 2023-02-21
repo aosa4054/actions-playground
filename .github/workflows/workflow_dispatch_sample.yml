@@ -21,3 +21,5 @@ jobs:
       - name: Run
         run: |
           echo $MY_ENV
+      - name: Use Composite
+        uses: ./.github/actions/composite
