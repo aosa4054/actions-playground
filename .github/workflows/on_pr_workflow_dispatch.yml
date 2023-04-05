@@ -9,6 +9,6 @@ on:
 jobs:
   on_pr_workflow_dispatch:
     if: ${{ false }}
-      runs-on: ubuntu-latest
-      steps:
-        - run: ""
+    runs-on: ubuntu-latest
+    steps:
+      - run: ""
