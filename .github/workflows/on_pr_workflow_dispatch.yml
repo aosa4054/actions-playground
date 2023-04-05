@@ -8,16 +8,7 @@ on:
 
 jobs:
   on_pr_workflow_dispatch:
-    runs-on: ubuntu-latest
-
-    steps: 
-      - name: Chackout
-        uses: actions/checkout@v2
-
-      - name: Env set
-        env:
-          SOME_STRING: hoge
-        run: echo $SOME_STRING
-
-      - name: Without env
-        run: echo $SOME_STRING
+    if: ${{ false }}
+      runs-on: ubuntu-latest
+      steps:
+        - run: ""
