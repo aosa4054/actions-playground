@@ -4,7 +4,8 @@ on:
       some_input:
         description: '説明'
         required: true
-        default:　'hogehoge'
+        default: 'hogehoge'
+        type: string
 
 jobs:
   on_pr_workflow_dispatch:
