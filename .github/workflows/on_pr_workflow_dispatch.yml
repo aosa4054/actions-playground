@@ -2,11 +2,9 @@ on:
   workflow_dispatch:
     inputs:
       some_input:
-        description:'説明'
-        required:　true
+        description: '説明'
+        required: true
         default:　'hogehoge'
-  pull_request:
-    types: [ opened, synchronize, reopened, ready_for_review ]
 
 jobs:
   on_pr_workflow_dispatch:
