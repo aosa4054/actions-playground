@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Set envs
         run: |
-          echo "MyEnv=huga" >> "$GITHUB_ENV"
+          echo "MY_ENV=huga" >> "$GITHUB_ENV"
       - name: Run
         run: |
           echo $MY_ENV
